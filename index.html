@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ROBLOX - O'zbekiston Gaming Portali</title>
+    <!-- Styles -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='70' height='70' x='15' y='15' rx='10' transform='rotate(15 50 50)' fill='%23ffffff'/><rect width='24' height='24' x='38' y='38' rx='4' transform='rotate(15 50 50)' fill='%23111216'/></svg>">
+</head>
+<body>
+
+    <!-- ======================================================================
+         TOP NAVBAR / HEADER
+         ====================================================================== -->
+    <header class="roblox-header">
+        <div class="header-left">
+            <button class="menu-toggle-btn" id="menuToggleBtn" title="Menyuni ochish/yopish">☰</button>
+            <div class="roblox-logo" data-nav-target="home">
+                <div class="logo-cube"></div>
+                <span class="logo-text">ROBLOX</span>
+            </div>
+            <nav class="nav-tabs">
+                <button class="nav-tab-btn active" data-nav-target="home">Bosh sahifa</button>
+                <button class="nav-tab-btn" data-nav-target="discover">O'yinlar</button>
+                <button class="nav-tab-btn" data-nav-target="avatar">Avatar Bozor</button>
+                <button class="nav-tab-btn" data-nav-target="create">Yaratish</button>
+                <button class="nav-tab-btn" data-nav-target="robux">Robux</button>
+            </nav>
+        </div>
+
+        <div class="header-center">
+            <div class="search-box">
+                <span class="search-icon">🔍</span>
+                <input type="text" id="globalSearchInput" class="search-input" placeholder="O'yinlar, obby va xaritalarni qidirish...">
+            </div>
+        </div>
+
+        <div class="header-right">
+            <!-- Robux Balance Pill -->
+            <div class="robux-pill" id="robuxPill" title="Robux hisobingiz">
+                <span class="robux-icon">🪙</span>
+                <span class="robux-count">2,500 R$</span>
+                <span class="robux-plus-btn">+</span>
+            </div>
+
+            <!-- Notifications -->
+            <button class="header-icon-btn" title="Bildirishnomalar">
+                🔔
+                <span class="badge-dot"></span>
+            </button>
+
+            <!-- Settings -->
+            <button class="header-icon-btn" title="Sozlamalar">⚙️</button>
+
+            <!-- User Profile Avatar -->
+            <div class="user-profile-btn" data-nav-target="avatar" title="Avatar profilingiz">
+                <div class="user-avatar-mini">😎</div>
+                <span class="user-name-text">ProGamer_Uz</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- ======================================================================
+         SIDEBAR
+         ====================================================================== -->
+    <aside class="roblox-sidebar">
+        <div class="sidebar-top">
+            <div class="sidebar-group">
+                <div class="sidebar-section-title">Asosiy</div>
+                <button class="sidebar-item active" data-nav-target="home">
+                    <span class="sidebar-icon">🏠</span>
+                    <span class="sidebar-text">Bosh sahifa</span>
+                </button>
+                <button class="sidebar-item" data-nav-target="discover">
+                    <span class="sidebar-icon">🎮</span>
+                    <span class="sidebar-text">O'yinlar Olami</span>
+                </button>
+                <button class="sidebar-item" data-nav-target="avatar">
+                    <span class="sidebar-icon">👕</span>
+                    <span class="sidebar-text">Avatar Redaktori</span>
+                </button>
+                <button class="sidebar-item" data-nav-target="create">
+                    <span class="sidebar-icon">🛠️</span>
+                    <span class="sidebar-text">Roblox Studio</span>
+                </button>
+                <button class="sidebar-item" data-nav-target="robux">
+                    <span class="sidebar-icon">🪙</span>
+                    <span class="sidebar-text">Robux & Promo</span>
+                </button>
+            </div>
+
+            <div class="sidebar-group">
+                <div class="sidebar-section-title">Do'stlar (3 Onlayn)</div>
+                <div class="friends-list">
+                    <div class="friend-item" title="Mega Obby o'ynamoqda">
+                        <div class="friend-avatar-wrap">
+                            <div class="friend-avatar">🤠</div>
+                            <span class="online-indicator"></span>
+                        </div>
+                        <div class="friend-info">
+                            <span class="friend-name">Ali_Builder</span>
+                            <span class="friend-status">Mega Obby 3D</span>
+                        </div>
+                    </div>
+                    <div class="friend-item" title="Blox Fruit o'ynamoqda">
+                        <div class="friend-avatar-wrap">
+                            <div class="friend-avatar">🐱</div>
+                            <span class="online-indicator"></span>
+                        </div>
+                        <div class="friend-info">
+                            <span class="friend-name">NoobMaster_99</span>
+                            <span class="friend-status">Blox Fruit</span>
+                        </div>
+                    </div>
+                    <div class="friend-item" title="Avatarni o'zgartirmoqda">
+                        <div class="friend-avatar-wrap">
+                            <div class="friend-avatar">👑</div>
+                            <span class="online-indicator"></span>
+                        </div>
+                        <div class="friend-info">
+                            <span class="friend-name">Jasur_Ninja</span>
+                            <span class="friend-status">Avatar Shop</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="sidebar-bottom">
+            <div class="promo-card">
+                <div class="promo-title">🎁 Bepul Robux!</div>
+                <div class="promo-desc">"ROBLOX2026" promo-kodidan foydalaning va 1,000 Robux oling!</div>
+                <button class="promo-btn" data-nav-target="robux">Kodni Kiritish</button>
+            </div>
+        </div>
+    </aside>
+
+    <!-- ======================================================================
+         MAIN CONTENT AREA
+         ====================================================================== -->
+    <main class="roblox-main-content">
+
+        <!-- ==================================================================
+             SECTION 1: HOME (BOSH SAHIFA)
+             ================================================================== -->
+        <section id="section-home" class="content-section active">
+            <!-- Hero Event Banner -->
+            <div class="welcome-hero-banner">
+                <div class="hero-inner">
+                    <div class="hero-text">
+                        <div class="hero-badge">⭐ TAVSIYA ETILGAN TADBIR</div>
+                        <h1 class="hero-title">MEGA OBBY PARKOUR 3D</h1>
+                        <p class="hero-subtitle">
+                            Haqiqiy 3D Roblox sarguzashti! Rangli platformalardan sakrab o'ting, qizil lavalardan ehtiyot bo'ling va Robux tangalarini to'plang!
+                        </p>
+                        <div class="hero-actions">
+                            <button class="btn-roblox-primary" id="heroPlayBtn">
+                                <span>▶</span> O'YNASH (PLAY)
+                            </button>
+                            <button class="btn-roblox-secondary" data-nav-target="avatar">
+                                <span>👕</span> Avatarni Sozlash
+                            </button>
+                        </div>
+                    </div>
+                    <div class="hero-graphic">
+                        🏆
+                    </div>
+                </div>
+            </div>
+
+            <!-- Shelf: Eng mashhur o'yinlar -->
+            <div class="game-shelf">
+                <div class="shelf-header">
+                    <div class="shelf-title-wrap">
+                        <span class="shelf-icon">🔥</span>
+                        <h2 class="shelf-title">Eng Mashhur O'yinlar</h2>
+                    </div>
+                    <button class="shelf-see-all-btn" data-nav-target="discover">Barchasini ko'rish →</button>
+                </div>
+                <div class="games-grid" id="popularGamesGrid">
+                    <!-- Dynamic Game Cards inserted via app.js -->
+                </div>
+            </div>
+
+            <!-- Shelf: Tavsiya etilganlar -->
+            <div class="game-shelf">
+                <div class="shelf-header">
+                    <div class="shelf-title-wrap">
+                        <span class="shelf-icon">✨</span>
+                        <h2 class="shelf-title">Siz Uchun Tavsiya Etilganlar</h2>
+                    </div>
+                    <button class="shelf-see-all-btn" data-nav-target="discover">Barchasini ko'rish →</button>
+                </div>
+                <div class="games-grid" id="recommendedGamesGrid">
+                    <!-- Dynamic Game Cards inserted via app.js -->
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================================================================
+             SECTION 2: DISCOVER (O'YINLAR)
+             ================================================================== -->
+        <section id="section-discover" class="content-section">
+            <div class="discover-toolbar">
+                <div class="category-chips">
+                    <button class="chip-btn active" data-category="all">Barchasi</button>
+                    <button class="chip-btn" data-category="obby">🏃 Obby & Parkur</button>
+                    <button class="chip-btn" data-category="action">⚔️ Jangovar</button>
+                    <button class="chip-btn" data-category="sim">🐱 Simulyator</button>
+                    <button class="chip-btn" data-category="racing">⚡ Poyga</button>
+                    <button class="chip-btn" data-category="survival">🌋 Omon qolish</button>
+                </div>
+                <div class="sort-select-wrap">
+                    <select id="gameSortSelect">
+                        <option value="popular">Eng ommabop</option>
+                        <option value="rating">Eng yuqori baholangan</option>
+                        <option value="new">Yangi qo'shilganlar</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="games-grid" id="discoverGamesGrid">
+                <!-- Filtered Games inserted dynamically -->
+            </div>
+        </section>
+
+        <!-- ==================================================================
+             SECTION 3: AVATAR SHOP & EDITOR
+             ================================================================== -->
+        <section id="section-avatar" class="content-section">
+            <div class="avatar-studio-layout">
+                <!-- Left: 3D Live Character Viewport -->
+                <div class="avatar-preview-panel">
+                    <h3 style="margin-bottom: 0.8rem; font-weight: 800; font-size: 1.1rem;">3D Avatar Ko'rinishi</h3>
+                    
+                    <div class="preview-canvas-container">
+                        <canvas id="avatarPreviewCanvas"></canvas>
+                        <div class="canvas-hint">Sichqoncha bilan 360° aylantiring</div>
+                    </div>
+
+                    <div class="avatar-emotes-bar">
+                        <button class="emote-btn" data-emote="dance">🕺 Raqs</button>
+                        <button class="emote-btn" data-emote="wave">👋 Salom</button>
+                        <button class="emote-btn" data-emote="idle">🧍 Tik turish</button>
+                    </div>
+                </div>
+
+                <!-- Right: Customizer Tabs & Shop -->
+                <div class="avatar-catalog-panel">
+                    <div class="avatar-nav-tabs">
+                        <button class="avatar-subtab-btn active" data-subtab="colors">🎨 Tana Ranglari</button>
+                        <button class="avatar-subtab-btn" data-subtab="hats">🧢 Bosh Kiyimlar</button>
+                        <button class="avatar-subtab-btn" data-subtab="faces">😊 Yuzlar</button>
+                        <button class="avatar-subtab-btn" data-subtab="shirts">👕 Futbolkalar</button>
+                        <button class="avatar-subtab-btn" data-subtab="back">🗡️ Aksessuarlar</button>
+                    </div>
+
+                    <!-- Subtab: Tana Ranglari -->
+                    <div id="avatarTab-colors" class="avatar-tab-content">
+                        <h4 style="margin-bottom: 0.8rem; font-weight: 700;">Tanlash uchun tana a'zosi:</h4>
+                        <div class="body-parts-selector">
+                            <button class="body-part-btn active" data-part="head">Bosh (Head)</button>
+                            <button class="body-part-btn" data-part="torso">Tana (Torso)</button>
+                            <button class="body-part-btn" data-part="leftArm">Chap Qo'l</button>
+                            <button class="body-part-btn" data-part="rightArm">O'ng Qo'l</button>
+                            <button class="body-part-btn" data-part="leftLeg">Chap Oyoq</button>
+                            <button class="body-part-btn" data-part="rightLeg">O'ng Oyoq</button>
+                        </div>
+
+                        <h4 style="margin-bottom: 0.8rem; font-weight: 700;">Roblox ranglar palitrasi:</h4>
+                        <div class="color-swatches-grid" id="colorSwatchesGrid"></div>
+                    </div>
+
+                    <!-- Subtab: Bosh kiyimlar -->
+                    <div id="avatarTab-hats" class="avatar-tab-content" style="display: none;">
+                        <div class="avatar-items-grid" id="avatarItemsHats"></div>
+                    </div>
+
+                    <!-- Subtab: Yuzlar -->
+                    <div id="avatarTab-faces" class="avatar-tab-content" style="display: none;">
+                        <div class="avatar-items-grid" id="avatarItemsFaces"></div>
+                    </div>
+
+                    <!-- Subtab: Futbolkalar -->
+                    <div id="avatarTab-shirts" class="avatar-tab-content" style="display: none;">
+                        <div class="avatar-items-grid" id="avatarItemsShirts"></div>
+                    </div>
+
+                    <!-- Subtab: Orqa Aksessuarlar -->
+                    <div id="avatarTab-back" class="avatar-tab-content" style="display: none;">
+                        <div class="avatar-items-grid" id="avatarItemsBack"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================================================================
+             SECTION 4: CREATE (ROBLOX STUDIO LITE)
+             ================================================================== -->
+        <section id="section-create" class="content-section">
+            <div class="studio-banner">
+                <div>
+                    <h2 class="studio-title">Roblox Studio Web</h2>
+                    <p class="studio-desc">
+                        O'zingizning shaxsiy parkur xaritangizni yarating! 3D platformalar, tuzoqlar, lava bloklari va tangalarni joylashtiring.
+                    </p>
+                    <button class="btn-roblox-primary" id="launchStudioTestBtn" data-nav-target="home">
+                        <span>🚀</span> Namuna Obbyni O'ynash
+                    </button>
+                </div>
+                <div style="font-size: 5rem;">🛠️</div>
+            </div>
+
+            <div class="studio-tools-grid">
+                <div class="studio-tool-card">
+                    <div class="studio-tool-icon">🧱</div>
+                    <h3 class="studio-tool-title">Oddiy Bloklar (Part)</h3>
+                    <p class="studio-tool-desc">O'yinchilar yurishi va sakrashi uchun mustahkam rangli platformalar.</p>
+                    <button class="btn-roblox-secondary" style="width: 100%;">Qo'shish</button>
+                </div>
+
+                <div class="studio-tool-card">
+                    <div class="studio-tool-icon">🔥</div>
+                    <h3 class="studio-tool-title">Lava Blok (Kill-Brick)</h3>
+                    <p class="studio-tool-desc">Tegishi bilanoq klassik "OOF" ovozi bilan o'yinchini qayta tiriltiruvchi qizil neon blok.</p>
+                    <button class="btn-roblox-secondary" style="width: 100%;">Qo'shish</button>
+                </div>
+
+                <div class="studio-tool-card">
+                    <div class="studio-tool-icon">⚡</div>
+                    <h3 class="studio-tool-title">Super Sakrash Padi (Jump Pad)</h3>
+                    <p class="studio-tool-desc">O'yinchini osmonga yuqori tezlikda uchiruvchi kuchli sariq batut.</p>
+                    <button class="btn-roblox-secondary" style="width: 100%;">Qo'shish</button>
+                </div>
+
+                <div class="studio-tool-card">
+                    <div class="studio-tool-icon">🚩</div>
+                    <h3 class="studio-tool-title">Nazorat Nuqtasi (Checkpoint)</h3>
+                    <p class="studio-tool-desc">O'yinchi yiqilib ketganida aynan shu joydan qayta boshlashini ta'minlovchi mayoq.</p>
+                    <button class="btn-roblox-secondary" style="width: 100%;">Qo'shish</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================================================================
+             SECTION 5: ROBUX SHOP & PROMO CODES
+             ================================================================== -->
+        <section id="section-robux" class="content-section">
+            <div class="robux-store-header">
+                <h2 class="robux-store-title">🪙 ROBUX DO'KONI VA PROMO KODLAR</h2>
+                <p style="color: var(--text-secondary); margin-top: 0.5rem;">
+                    Robux orqali yangi kiyimlar, eksklyuziv shlyapalar va maxsus aksessuarlarga ega bo'ling!
+                </p>
+            </div>
+
+            <!-- Packages -->
+            <div class="robux-packages-grid">
+                <div class="robux-pack-card">
+                    <div class="pack-coins-icon">🪙</div>
+                    <div class="pack-amount">400 R$</div>
+                    <div class="pack-bonus">+ Boshlang'ich paket</div>
+                    <button class="pack-buy-btn" data-amount="400">Olish (Bepul Simulyator)</button>
+                </div>
+
+                <div class="robux-pack-card popular">
+                    <span class="pack-popular-tag">Eng Ommabop</span>
+                    <div class="pack-coins-icon">💰</div>
+                    <div class="pack-amount">1,000 R$</div>
+                    <div class="pack-bonus">+ 100 Bonus Robux!</div>
+                    <button class="pack-buy-btn" data-amount="1000">Olish (Bepul Simulyator)</button>
+                </div>
+
+                <div class="robux-pack-card">
+                    <div class="pack-coins-icon">💎</div>
+                    <div class="pack-amount">2,500 R$</div>
+                    <div class="pack-bonus">+ 350 Bonus Robux!</div>
+                    <button class="pack-buy-btn" data-amount="2500">Olish (Bepul Simulyator)</button>
+                </div>
+
+                <div class="robux-pack-card">
+                    <div class="pack-coins-icon">👑</div>
+                    <div class="pack-amount">10,000 R$</div>
+                    <div class="pack-bonus">+ Vip Qirol To'plami!</div>
+                    <button class="pack-buy-btn" data-amount="10000">Olish (Bepul Simulyator)</button>
+                </div>
+            </div>
+
+            <!-- Promo Codes Redemption -->
+            <div class="promo-redeem-container">
+                <div style="font-size: 3rem; margin-bottom: 0.5rem;">🎟️</div>
+                <h3 class="promo-redeem-title">Promo-kodni Faollashtirish</h3>
+                <p class="promo-redeem-desc">Maxsus kodlarni kiriting va bepul Robux hamda noyob buyumlarni qo'lga kiriting!</p>
+
+                <div class="promo-input-row">
+                    <input type="text" id="promoCodeInput" class="promo-code-input" placeholder="KODNI KIRITING...">
+                    <button id="promoSubmitBtn" class="promo-submit-btn">Faollashtirish</button>
+                </div>
+
+                <div class="available-promos-hint">
+                    <span style="font-size: 0.8rem; color: var(--text-muted);">Sinab ko'rish uchun kodlar:</span>
+                    <span class="promo-badge-tag" data-code="ROBLOX2026">ROBLOX2026 (+1000 R$)</span>
+                    <span class="promo-badge-tag" data-code="FREE500">FREE500 (+500 R$)</span>
+                    <span class="promo-badge-tag" data-code="UZBEKISTAN">UZBEKISTAN (+2000 R$)</span>
+                    <span class="promo-badge-tag" data-code="SUPERNOOB">SUPERNOOB (+300 R$)</span>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ======================================================================
+         3D PLAYABLE GAME CLIENT MODAL
+         ====================================================================== -->
+    <div class="game-modal-overlay" id="gameModal">
+        <!-- Top Game Client Bar -->
+        <div class="game-client-topbar">
+            <div class="game-title-info">
+                <div class="logo-cube" style="width: 22px; height: 22px;"></div>
+                <span style="font-weight: 800; font-size: 1rem;">Mega Obby Parkour 3D</span>
+            </div>
+
+            <div class="game-status-widgets">
+                <!-- Health Bar -->
+                <div class="health-widget">
+                    <span>❤️</span>
+                    <div class="health-bar-bg">
+                        <div class="health-bar-fill" id="gameHealthFill"></div>
+                    </div>
+                    <span class="health-text" id="gameHealthText">100 / 100</span>
+                </div>
+
+                <!-- Coins / Robux in Game -->
+                <div class="game-coin-counter">
+                    <span>🪙</span>
+                    <span id="inGameCoins">+0 R$</span>
+                </div>
+
+                <!-- Checkpoint -->
+                <div class="checkpoint-display" id="gameCheckpointText">
+                    Bosqich 1 / 5
+                </div>
+
+                <!-- Timer -->
+                <div style="font-size: 0.85rem; font-weight: 700; color: var(--text-secondary);">
+                    ⏱️ <span id="gameTimerText">00:00</span>
+                </div>
+            </div>
+
+            <div class="game-controls-actions">
+                <button class="game-action-btn" id="gameRestartBtn" title="Qayta tug'ilish (R)">
+                    🔄 Qayta tug'ilish
+                </button>
+                <button class="game-action-btn leave-btn" id="leaveGameBtn" title="O'yindan chiqish">
+                    ✕ Chiqish
+                </button>
+            </div>
+        </div>
+
+        <!-- 3D Canvas Area -->
+        <div class="game-canvas-area">
+            <canvas id="robloxGameCanvas"></canvas>
+
+            <!-- Onscreen Controls Overlay Guide -->
+            <div class="game-controls-hint">
+                <div><span class="key-badge">W</span><span class="key-badge">A</span><span class="key-badge">S</span><span class="key-badge">D</span> yoki Yo'nalish tugmalari: Yurish</div>
+                <div><span class="key-badge">Bo'shliq (Space)</span>: Sakrash</div>
+                <div><span class="key-badge">Sichqoncha bilan bosib tortish</span>: Kamerani aylantirish</div>
+                <div><span class="key-badge">R</span>: Qayta tug'ilish (Respawn)</div>
+            </div>
+
+            <!-- On-Screen Jump Button (Roblox Jump Button) -->
+            <button class="game-jump-fab" id="screenJumpBtn" title="Sakrash (Space)">
+                <span class="jump-fab-icon">🦘</span>
+                <span class="jump-fab-text">SAKRASH</span>
+            </button>
+
+            <!-- Victory Modal Popup -->
+            <div class="victory-overlay" id="victoryOverlay">
+                <div class="victory-card">
+                    <div class="victory-trophy-icon">🏆</div>
+                    <h2 class="victory-title">G'ALABA!</h2>
+                    <p style="color: var(--text-secondary); margin-bottom: 1rem;">
+                        Siz barcha to'siqlardan muvaffaqiyatli o'tib, marraga yetib keldingiz!
+                    </p>
+                    <div class="victory-reward">+250 ROBUX MUKOFOTI! 🪙</div>
+                    <div class="victory-buttons">
+                        <button class="btn-roblox-primary" id="victoryClaimBtn" style="width: 100%;">
+                            Mukofotni Olish va Chiqish
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notification Container -->
+    <div class="roblox-toast-container" id="toastContainer"></div>
+
+    <!-- Scripts (Ordered: Libraries -> Audio -> Avatar -> Game -> App) -->
+    <script src="three.min.js"></script>
+    <script src="audio.js"></script>
+    <script src="avatar.js"></script>
+    <script src="game.js"></script>
+    <script src="app.js"></script>
+
+</body>
+</html>
